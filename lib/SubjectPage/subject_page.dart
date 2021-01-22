@@ -1,16 +1,13 @@
 import 'package:flutter/material.dart';
 
-
-// ignore: camel_case_types
-class home extends StatelessWidget {
+class MXSubjectPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
-      body: Container(
-        // sd?dsfsd
+      appBar: AppBar(
+        title: Text("书影音"),
       ),
+      body: Text("书影音"),
     );
   }
-  
 }
