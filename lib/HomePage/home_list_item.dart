@@ -29,12 +29,27 @@ Widget titleBuilder() {
 
 Widget coverBuilder() {
   return ClipRRect(
-    borderRadius: BorderRadius.all(Radius.circular(8.0)),
+    borderRadius: BorderRadius.all(Radius.circular(10.0)),
     child: Image.network(
       movie.cover,
       height: 120,
       width: 80,),
   );
 }
+
+Widget directorBuilder() {
+  String director = movie.directors.join("/");
+
+  return Text.rich(
+    TextSpan(
+      children: [
+        WidgetSpan(child: Text("导演：", style: TextStyle(fontSize: 10, color: Colors.black87))),
+        WidgetSpan(child: Text(director, style: TextStyle(fontSize: 10, color: Colors.blue[600]),))
+      ]
+    )
+    
+  );
+}
+
 }
 
