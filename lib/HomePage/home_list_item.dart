@@ -38,6 +38,7 @@ Widget contentBuilder() {
       coverBuilder(),
       SizedBox(width:10.0),
       directorBuilder(),
+      rightContentBuilder()
     ],
   );
 }
@@ -70,13 +71,35 @@ Widget directorBuilder() {
         Text.rich(
           TextSpan(
             children:[
-            WidgetSpan(child: Text("主演：", style: TextStyle(fontSize: 10, color: Colors.black87))),
-            WidgetSpan(child: Text(casts, style: TextStyle(fontSize: 10, color: Colors.blue[600]), maxLines: 2, overflow: TextOverflow.ellipsis,))]
-          )
+              TextSpan(
+                text:"主演：",
+                style:TextStyle(fontSize: 10, color: Colors.black87)
+              ),
+              TextSpan(
+                text:casts,
+                style:TextStyle(fontSize: 10, color: Colors.blue[600])
+              ),
+            ])
         )
       ],
     ),
   );
+}
+
+Widget rightContentBuilder() {
+    return Container(
+      width: 50.0,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: <Widget>[
+          Text("评分", textAlign: TextAlign.center, style: TextStyle(fontSize: 25.0, color: Colors.black54),),
+          SizedBox(
+            height:15.0
+          ),
+          Text(movie.rate, textAlign: TextAlign.center, style: TextStyle(fontSize: 20.0, color: Colors.yellow[400]),)
+        ],
+      ),
+    );
 }
 
 }
